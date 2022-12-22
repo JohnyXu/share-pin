@@ -18,7 +18,9 @@ interface SideBarProps {
 
 const Sidebar = ({ closeToggle, user }: SideBarProps) => {
   const handleCloseSidebar = () => {
-    if (closeToggle) closeToggle(false);
+    if (closeToggle) {
+      closeToggle(false);
+    }
   };
 
   return (

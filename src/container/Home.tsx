@@ -6,6 +6,8 @@ import { userQuery } from '../utils/data';
 
 import { Sidebar, UserProfile } from '../components';
 import { client } from '../client';
+
+import Pins from './Pins';
 import logo from '../assets/logo.png';
 import { SanityUserDoc } from '../utils';
 
@@ -23,6 +25,8 @@ export default function Home() {
     const query = userQuery(userInfo?._id);
 
     client.fetch(query).then((data) => {
+      console.log('data:', data);
+
       setUser(data[0]);
     });
   }, []);
@@ -62,6 +66,7 @@ export default function Home() {
       <div className="pb-2 flex-1 h-screen overflow-y-scroll" ref={scrollRef}>
         <Routes>
           <Route path="/user-profile/:userId" element={<UserProfile />} />
+          <Route path="/*" element={<Pins user={user && user} />} />
         </Routes>
       </div>
     </div>
