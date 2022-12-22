@@ -14,8 +14,8 @@ function Login() {
   const responseGoogle = (response: any) => {
     console.log('responseGoogle');
 
-    // localStorage.setItem('user', JSON.stringify(response?.profileObj));
     const doc: SanityUserDoc = getUser(response);
+    localStorage.setItem('user', JSON.stringify(doc));
 
     client.createIfNotExists(doc).then(() => {
       navigate('/', { replace: true });
