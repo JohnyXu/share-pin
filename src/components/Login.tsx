@@ -6,7 +6,7 @@ import logo from '../assets/logowhite.png';
 import shareVideo from '../assets/share.mp4';
 
 import { client } from '../client';
-import { getUser, SanityUserDoc } from '../utils';
+import { getUser, ISanityUserDoc } from '../utils';
 
 function Login() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function Login() {
   const responseGoogle = (response: any) => {
     console.log('responseGoogle');
 
-    const doc: SanityUserDoc = getUser(response);
+    const doc: ISanityUserDoc = getUser(response);
     localStorage.setItem('user', JSON.stringify(doc));
 
     client.createIfNotExists(doc).then(() => {

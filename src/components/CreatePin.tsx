@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { SanityUserDoc } from '../utils';
+import { ISanityUserDoc } from '../utils';
 
 interface CreatePinProps {
-  user: undefined | SanityUserDoc;
+  user: undefined | ISanityUserDoc;
 }
 
 function CreatePin({ user }: CreatePinProps) {

@@ -9,11 +9,11 @@ import { client } from '../client';
 
 import Pins from './Pins';
 import logo from '../assets/logo.png';
-import { SanityUserDoc } from '../utils';
+import { ISanityUserDoc } from '../utils';
 
 export default function Home() {
   const [toggleSidebar, setToggleSidebar] = useState(false);
-  const [user, setUser] = useState<SanityUserDoc>();
+  const [user, setUser] = useState<ISanityUserDoc>();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const userInfo =

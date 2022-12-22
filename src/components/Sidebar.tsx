@@ -4,7 +4,7 @@ import { RiHomeFill } from 'react-icons/ri';
 import { IoIosArrowForward } from 'react-icons/io';
 import logo from '../assets/logo.png';
 import { categories } from '../utils/data';
-import { SanityUserDoc } from '../utils';
+import { ISanityUserDoc } from '../utils';
 
 const isNotActiveStyle =
   'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
@@ -13,7 +13,7 @@ const isActiveStyle =
 
 interface SideBarProps {
   closeToggle?: (enable: boolean) => void;
-  user: undefined | SanityUserDoc;
+  user: undefined | ISanityUserDoc;
 }
 
 const Sidebar = ({ closeToggle, user }: SideBarProps) => {

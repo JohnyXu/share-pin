@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { Navbar, Feed, PinDetail, CreatePin, Search } from '../components';
-import { SanityUserDoc } from '../utils';
+import { ISanityUserDoc } from '../utils';
 
 interface PinsProps {
-  user: undefined | SanityUserDoc;
+  user: undefined | ISanityUserDoc;
 }
 
 const Pins = ({ user }: PinsProps) => {

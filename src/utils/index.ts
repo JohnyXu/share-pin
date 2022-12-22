@@ -1,11 +1,11 @@
-export interface SanityUserDoc {
+export interface ISanityUserDoc {
   _id: string;
   _type: string;
   userName: string;
   image: string;
 }
 
-export const getUser = (response: any): SanityUserDoc => {
+export const getUser = (response: any): ISanityUserDoc => {
   var base64Url = response.credential.split('.')[1];
   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   var jsonPayload = decodeURIComponent(
@@ -19,7 +19,7 @@ export const getUser = (response: any): SanityUserDoc => {
 
   const { name, picture, sub } = JSON.parse(jsonPayload);
 
-  const user: SanityUserDoc = {
+  const user: ISanityUserDoc = {
     _id: sub,
     _type: 'user',
     userName: name,

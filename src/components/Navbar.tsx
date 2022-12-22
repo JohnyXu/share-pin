@@ -1,12 +1,12 @@
 import React from 'react';
-import { SanityUserDoc } from '../utils';
+import { ISanityUserDoc } from '../utils';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoMdAdd, IoMdSearch } from 'react-icons/io';
 
 interface NavBarProps {
   searchTerm: string;
   setSearchTerm: (value: string) => void;
-  user: undefined | SanityUserDoc;
+  user: undefined | ISanityUserDoc;
 }
 
 function NavBar({ searchTerm, setSearchTerm, user }: NavBarProps) {
