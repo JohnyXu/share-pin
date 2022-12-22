@@ -37,7 +37,7 @@ const Sidebar = ({ closeToggle, user }: SideBarProps) => {
             className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)}
             onClick={handleCloseSidebar}
           >
-            <RiHomeFill />
+            <RiHomeFill size={20} />
             Home
           </NavLink>
           <h3 className="mt-2 px-5 text-base 2xl:text-xl">Discover cateogries</h3>
@@ -48,7 +48,11 @@ const Sidebar = ({ closeToggle, user }: SideBarProps) => {
               onClick={handleCloseSidebar}
               key={category.name}
             >
-              <img src={category.image} className="w-8 h-8 rounded-full shadow-sm" />
+              <img
+                src={category.image}
+                alt={category.name}
+                className="w-8 h-8 rounded-full shadow-sm"
+              />
               {category.name}
             </NavLink>
           ))}

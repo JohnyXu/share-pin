@@ -20,7 +20,7 @@ export default function Home() {
       : localStorage.clear();
 
   useEffect(() => {
-    const query = userQuery(userInfo?.googleId);
+    const query = userQuery(userInfo?._id);
 
     client.fetch(query).then((data) => {
       setUser(data[0]);
@@ -43,7 +43,7 @@ export default function Home() {
             <img src={logo} alt="logo" className="w-28" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img src={user?.image} alt="user-pic" className="w-9 h-9 rounded-full " />
+            <img src={user?.image} alt="user-pic" className="w-9 h-9 rounded-full" />
           </Link>
         </div>
         {toggleSidebar && (
