@@ -6,6 +6,7 @@ const breakpointColumnsObj = {
   default: 4,
   3000: 6,
   2000: 5,
+  1600: 4,
   1200: 3,
   1000: 2,
   500: 1,
@@ -13,7 +14,10 @@ const breakpointColumnsObj = {
 
 export default function MasonryLayout({ pins }: any) {
   return (
-    <Masonry className="flex animate-slide-fwd" breakpointCols={breakpointColumnsObj}>
+    <Masonry
+      className="flex animate-slide-fwd sm:justify-center sm:align-middle"
+      breakpointCols={breakpointColumnsObj}
+    >
       {pins?.map((pin: any) => (
         <Pin key={pin._id} pin={pin} />
       ))}
