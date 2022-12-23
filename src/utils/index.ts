@@ -1,3 +1,9 @@
+import {
+  SanityImageSource,
+  SanityImageObject,
+  SanityAsset,
+} from '@sanity/image-url/lib/types/types';
+
 export interface ISanityUserDoc {
   _id: string;
   _type: string;
@@ -26,4 +32,10 @@ export const getUser = (response: any): ISanityUserDoc => {
     image: picture,
   };
   return user;
+};
+
+export const getSanityImageUrl = (image: SanityImageSource) => {
+  const imageObj: SanityImageObject = image as SanityImageObject;
+  const asset: SanityAsset = imageObj.asset as SanityAsset;
+  return asset.url;
 };

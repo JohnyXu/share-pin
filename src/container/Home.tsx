@@ -21,15 +21,16 @@ export default function Home() {
       ? JSON.parse(localStorage.getItem('user') as string)
       : localStorage.clear();
 
+  const userId: string = userInfo?._id;
   useEffect(() => {
-    const query = userQuery(userInfo?._id);
+    const query = userQuery(userId);
 
     client.fetch(query).then((data) => {
       console.log('data:', data);
 
       setUser(data[0]);
     });
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     scrollRef.current?.scrollTo(0, 0);

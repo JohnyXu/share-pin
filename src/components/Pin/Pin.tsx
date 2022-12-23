@@ -5,11 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { MdDownloadForOffline } from 'react-icons/md';
 import { AiTwotoneDelete } from 'react-icons/ai';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
-import { SanityImageObject, SanityAsset } from '@sanity/image-url/lib/types/types';
 
 import { client, urlFor } from '../../client';
 import { IPin } from '../../types';
-import { ISanityUserDoc } from '../../utils';
+import { ISanityUserDoc, getSanityImageUrl } from '../../utils';
 
 interface PinProps {
   pin: IPin;
@@ -87,7 +86,7 @@ const Pin = ({ pin }: PinProps) => {
               <div className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <a
-                    href={`${((image as SanityImageObject)?.asset as SanityAsset)?.url}?dl=`}
+                    href={`${getSanityImageUrl(image)}?dl=`}
                     download
                     onClick={(e) => {
                       e.stopPropagation();
