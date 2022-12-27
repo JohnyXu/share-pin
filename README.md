@@ -30,3 +30,9 @@ add origin to sanity
 CORS origins:
 http://localhost:3333
 http://localhost:3000/
+
+
+## Deploy
+
+npm run build
+drop build folder to netlify platform
