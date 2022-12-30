@@ -21,8 +21,6 @@ export default function MasonryLayout({ pins }: any) {
       {pins?.map((pin: any) => (
         <Pin key={pin._id} pin={pin} />
       ))}
-
-      {pins?.length === 0 && <div className="mt-10 text-center text-xl ">No Pins Found!</div>}
     </Masonry>
   );
 }

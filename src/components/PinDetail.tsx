@@ -160,6 +160,11 @@ function PinDetail({ user }: PinDetailProps) {
         <h2 className="text-center font-bold text-2xl mt-8 mb-4">More like this</h2>
       )}
       {pins ? <MasonryLayout pins={pins} /> : <Spinner message="Loading more pins" />}
+      {pins?.length === 0 && (
+        <div className="flex justify-center font-bold items-center w-full text-1xl my-3">
+          No Similiar Pins Found!
+        </div>
+      )}
     </>
   );
 }
