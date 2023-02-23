@@ -93,7 +93,7 @@ function PinDetail({ user }: PinDetailProps) {
                 </a>
               </div>
               <a href={pinDetail.destination} target="_blank" rel="noreferrer">
-                {pinDetail.destination?.slice(8)}
+                {pinDetail.destination && pinDetail.destination.startsWith("https://")? pinDetail.destination?.slice(8):pinDetail.destination?.slice(7) }
               </a>
             </div>
             <div>

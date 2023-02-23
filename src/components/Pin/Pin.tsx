@@ -120,7 +120,7 @@ const Pin = ({ pin }: PinProps) => {
                   rel="noreferrer"
                 >
                   <BsFillArrowUpRightCircleFill />
-                  {destination?.slice(8, 17)}...
+                  {destination && destination.startsWith("https://") ? destination?.slice(8, 17): destination?.slice(7,16)}...
                 </a>
               ) : undefined}
               {postedBy?._id === user?._id && (
